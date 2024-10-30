@@ -389,6 +389,13 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.static(path.join(__dirname, 'img')));
 app.use(express.static(path.join(__dirname, 'html')));
 app.use(express.static(path.join(__dirname, 'video')));
+app.use(express.static('css', {
+    setHeaders: (res, path) => {
+        if (path.endsWith('.css')) {
+            res.set('Content-Type', 'text/css');
+        }
+    }
+}));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 console.log('Servindo arquivos estáticos a partir da pasta public');
 

@@ -10,30 +10,23 @@
 </head>
 
 <body>
-
     <div id="sidebar" class="sidebar">
-        <!-- Conteúdo da barra lateral -->
-        
         <div id="infouser">
             <div id="imguser">
-              <img src="../uploads/default-profile.png" id="imguserelement"> <!-- Coloque uma imagem padrão -->
+                <img src="../uploads/default-profile.png" id="imguserelement">
             </div>
             <h2 id="nomeusuario">Usuario</h2>
         </div>
 
-        <div id="linha">
-        </div>
+        <div id="linha"></div>
         <ul>
             <li><a href="/pagaluno.html">Cursos</a></li>
-            <li><a href="https://www.mapadaprova.com.br/questoes/informatica-basica/office-365"
-                    target="_blank">Questões</a></li>
+            <li><a href="https://www.mapadaprova.com.br/questoes/informatica-basica/office-365" target="_blank">Questões</a></li>
             <li><a href="/certificado.html">Certificados</a></li>
             <li><a href="/config.html">Configurações</a></li>
-
             <li><a href="/indexInicio.html">Sair</a></li>
         </ul>
         <div id="linha2">
-
             <h2>TECNOBRASA</h2>
         </div>
     </div>
@@ -43,38 +36,34 @@
             <img src="/barras.png" id="menu-toggle">
             <h2>Meus Cursos</h2>
         </div>
-        <!-- partial:index.partial.html -->
-<div class="floating-chat">
-    <i class="fa fa-comments" aria-hidden="true"></i>
-    <div class="chat">
-        <div class="header">
-            <span class="title">
-               Tire sua dúvida
-            </span>
-            <button>
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </button>
-                         
-        </div>
-        <ul class="messages">
-            <li class="other">Olá</li>
-            <li class="other">Como posso te ajudar ? </li>
-            <li class="self">tenho uma pergunta.</li>
-            <li class="other">Pode me falar, estou aqui para ajudar.</li>
-            <li class="self">okay</li>
-            <li class="other">Pergunte-me.</li>
-            <li class="self">Um momentinho preciso sair!</li>
-            <li class="other">Ok, lembre do nosso  horario de funcionamento!</li>
-            <li class="self">Certo</li>
-        </ul>
-        <div class="footer">
-            <div class="text-box" contenteditable="true" disabled="true"></div>
-            <button id="sendMessage">Enviar</button>
-        </div>
-    </div>
-</div>
 
-        <!-- partial:index.partial.html -->
+        <div class="floating-chat">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <div class="chat">
+                <div class="header">
+                    <span class="title">Tire sua dúvida</span>
+                    <button>
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <ul class="messages">
+                    <li class="other">Olá</li>
+                    <li class="other">Como posso te ajudar ? </li>
+                    <li class="self">tenho uma pergunta.</li>
+                    <li class="other">Pode me falar, estou aqui para ajudar.</li>
+                    <li class="self">okay</li>
+                    <li class="other">Pergunte-me.</li>
+                    <li class="self">Um momentinho preciso sair!</li>
+                    <li class="other">Ok, lembre do nosso horário de funcionamento!</li>
+                    <li class="self">Certo</li>
+                </ul>
+                <div class="footer">
+                    <div class="text-box" contenteditable="true"></div>
+                    <button id="sendMessage">Enviar</button>
+                </div>
+            </div>
+        </div>
+
         <div class="controls">
             <button class="filter all" data-filter="all">Mostrar todos</button>
             <button class="filter" data-filter=".favorite">Favoritos</button>
@@ -83,20 +72,13 @@
             <button class="filter" data-filter=".git">Git</button>
         </div>
 
-        <div class="pager-list">
-            <!-- Pagination buttons will be generated here -->
-        </div>
-
-
+        <div class="pager-list"></div>
 
         <div id="Container" class="container">
-
             <a class="mix word office" href="/word.html" data-id="word">
                 <img class="image" src="/microsoft-word.png">
                 <div class="overlay">
-                    <div class="hover-text">
-                        Word na Prática
-                    </div>
+                    <div class="hover-text">Word na Prática</div>
                 </div>
                 <button class="favorite-button" onclick="toggleFavorite(event, this, 'word')">✩</button>
             </a>
@@ -104,9 +86,7 @@
             <a class="mix excel office" href="/excel.html" data-id="excel">
                 <img class="image" src="/microsoft-excel.png">
                 <div class="overlay">
-                    <div class="hover-text">
-                        Excel na Prática
-                    </div>
+                    <div class="hover-text">Excel na Prática</div>
                 </div>
                 <button class="favorite-button" onclick="toggleFavorite(event, this, 'excel')">✩</button>
             </a>
@@ -114,9 +94,7 @@
             <a class="mix powerpoint office" href="/ppt.html" data-id="powerpoint">
                 <img class="image" src="/microsoft-power-point.png">
                 <div class="overlay">
-                    <div class="hover-text">
-                        PowerPoint na Prática
-                    </div>
+                    <div class="hover-text">PowerPoint na Prática</div>
                 </div>
                 <button class="favorite-button" onclick="toggleFavorite(event, this, 'powerpoint')">✩</button>
             </a>
@@ -124,9 +102,7 @@
             <a class="mix computadores hardware" href="/computador.html" data-id="computador">
                 <img class="image" src="/computer-repair.png">
                 <div class="overlay">
-                    <div class="hover-text">
-                        Montagem e Manutenção de Computadores
-                    </div>
+                    <div class="hover-text">Montagem e Manutenção de Computadores</div>
                 </div>
                 <button class="favorite-button" onclick="toggleFavorite(event, this, 'computador')">✩</button>
             </a>
@@ -134,9 +110,7 @@
             <a class="mix git git" href="/git.html" data-id="git">
                 <img class="image" src="/git-icon.png">
                 <div class="overlay">
-                    <div class="hover-text">
-                        Conhecendo o GIT
-                    </div>
+                    <div class="hover-text">Conhecendo o GIT</div>
                 </div>
                 <button class="favorite-button" onclick="toggleFavorite(event, this, 'git')">✩</button>
             </a>
@@ -145,6 +119,7 @@
             <div class="gap"></div>
         </div>
     </div>
+</body>
     <!-- partial -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>

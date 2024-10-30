@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURSOS</title>
+    <link rel="stylesheet" href="/pagaluno.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'><link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="sidebar" class="sidebar">
+        <!-- Conteúdo da barra lateral -->
+        
+        <div id="infouser">
+            <div id="imguser">
+              <img src="../uploads/default-profile.png" id="imguserelement"> <!-- Coloque uma imagem padrão -->
+            </div>
+            <h2 id="nomeusuario">Usuario</h2>
+        </div>
+
+        <div id="linha">
+        </div>
+        <ul>
+            <li><a href="/pagaluno.html">Cursos</a></li>
+            <li><a href="https://www.mapadaprova.com.br/questoes/informatica-basica/office-365"
+                    target="_blank">Questões</a></li>
+            <li><a href="/certificado.html">Certificados</a></li>
+            <li><a href="/config.html">Configurações</a></li>
+
+            <li><a href="/indexInicio.html">Sair</a></li>
+        </ul>
+        <div id="linha2">
+
+            <h2>TECNOBRASA</h2>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="boxmenu">
+            <img src="/barras.png" id="menu-toggle">
+            <h2>Meus Cursos</h2>
+        </div>
+        <!-- partial:index.partial.html -->
+<div class="floating-chat">
+    <i class="fa fa-comments" aria-hidden="true"></i>
+    <div class="chat">
+        <div class="header">
+            <span class="title">
+               Tire sua dúvida
+            </span>
+            <button>
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+                         
+        </div>
+        <ul class="messages">
+            <li class="other">Olá</li>
+            <li class="other">Como posso te ajudar ? </li>
+            <li class="self">tenho uma pergunta.</li>
+            <li class="other">Pode me falar, estou aqui para ajudar.</li>
+            <li class="self">okay</li>
+            <li class="other">Pergunte-me.</li>
+            <li class="self">Um momentinho preciso sair!</li>
+            <li class="other">Ok, lembre do nosso  horario de funcionamento!</li>
+            <li class="self">Certo</li>
+        </ul>
+        <div class="footer">
+            <div class="text-box" contenteditable="true" disabled="true"></div>
+            <button id="sendMessage">Enviar</button>
+        </div>
+    </div>
+</div>
+
+        <!-- partial:index.partial.html -->
+        <div class="controls">
+            <button class="filter all" data-filter="all">Mostrar todos</button>
+            <button class="filter" data-filter=".favorite">Favoritos</button>
+            <button class="filter" data-filter=".office">Pacote Office</button>
+            <button class="filter" data-filter=".hardware">Computadores</button>
+            <button class="filter" data-filter=".git">Git</button>
+        </div>
+
+        <div class="pager-list">
+            <!-- Pagination buttons will be generated here -->
+        </div>
+
+
+
+        <div id="Container" class="container">
+
+            <a class="mix word office" href="/word.html" data-id="word">
+                <img class="image" src="/microsoft-word.png">
+                <div class="overlay">
+                    <div class="hover-text">
+                        Word na Prática
+                    </div>
+                </div>
+                <button class="favorite-button" onclick="toggleFavorite(event, this, 'word')">✩</button>
+            </a>
+
+            <a class="mix excel office" href="/excel.html" data-id="excel">
+                <img class="image" src="/microsoft-excel.png">
+                <div class="overlay">
+                    <div class="hover-text">
+                        Excel na Prática
+                    </div>
+                </div>
+                <button class="favorite-button" onclick="toggleFavorite(event, this, 'excel')">✩</button>
+            </a>
+
+            <a class="mix powerpoint office" href="/ppt.html" data-id="powerpoint">
+                <img class="image" src="/microsoft-power-point.png">
+                <div class="overlay">
+                    <div class="hover-text">
+                        PowerPoint na Prática
+                    </div>
+                </div>
+                <button class="favorite-button" onclick="toggleFavorite(event, this, 'powerpoint')">✩</button>
+            </a>
+
+            <a class="mix computadores hardware" href="/computador.html" data-id="computador">
+                <img class="image" src="/computer-repair.png">
+                <div class="overlay">
+                    <div class="hover-text">
+                        Montagem e Manutenção de Computadores
+                    </div>
+                </div>
+                <button class="favorite-button" onclick="toggleFavorite(event, this, 'computador')">✩</button>
+            </a>
+
+            <a class="mix git git" href="/git.html" data-id="git">
+                <img class="image" src="/git-icon.png">
+                <div class="overlay">
+                    <div class="hover-text">
+                        Conhecendo o GIT
+                    </div>
+                </div>
+                <button class="favorite-button" onclick="toggleFavorite(event, this, 'git')">✩</button>
+            </a>
+
+            <div class="gap"></div>
+            <div class="gap"></div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="/chat.js"></script>
+    <script>
+        $(function () {
+            $('#Container').mixItUp();
+        });
+        $('#menu-toggle').on('click', function () {
+            // Alterna a classe 'active' no elemento #sidebar
+            $('#sidebar').toggleClass('active');
+
+            // Alterna a classe 'shifted' no elemento #content
+            $('#content').toggleClass('shifted');
+        });
+        // Quando o documento estiver pronto, faça a requisição para obter os dados do usuário logado
+        $(document).ready(function() {
+        $.ajax({
+            url: '/user/profile', // URL da rota no backend
+            method: 'GET',
+            success: function(response) {
+                if (response.success) {
+                    // Atualiza o nome do usuário
+                    $('#nomeusuario').text(response.nome);
+
+                    // Atualiza a imagem do usuário
+                    $('#imguserelement').attr('src', response.profileImage);
+                } else {
+                    console.error('Erro ao carregar informações do usuário:', response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erro na requisição:', error);
+            }
+        });
+    });
+// Função para alternar o estado de favoritar
+function toggleFavorite(event, button, courseId) {
+    event.preventDefault();  // Impede o redirecionamento do link
+    event.stopPropagation(); // Impede o clique no botão de ativar o link pai
+
+    // Faz uma requisição AJAX para o servidor
+    $.ajax({
+        url: '/user/favorite', // URL para a rota no backend
+        method: 'POST',
+        data: { courseId: courseId }, // Enviamos o ID do curso
+        success: function(response) {
+            if (response.success) {
+                // Se o curso foi favoritado com sucesso, atualiza a interface
+                if (response.isFavorited) {
+                    $(button).closest('.mix').addClass('favorite');
+                    updateFavoriteButton(button, true);
+                } else {
+                    $(button).closest('.mix').removeClass('favorite');
+                    updateFavoriteButton(button, false);
+                }
+            } else {
+                console.error('Erro ao favoritar o curso:', response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Erro na requisição:', error);
+        }
+    });
+}
+
+// Atualiza o estado visual do botão
+function updateFavoriteButton(button, isFavorited) {
+    if (isFavorited) {
+        $(button).text('⭐');
+    } else {
+        $(button).text('✩');
+    }
+}
+// Carregar favoritos ao iniciar a página
+$(document).ready(function () {
+    // Faz uma requisição AJAX para carregar os favoritos do banco de dados
+    $.ajax({
+        url: '/user/favorites', // URL para a rota que retorna os favoritos do usuário
+        method: 'GET',
+        success: function(response) {
+            if (response.success) {
+                let favorites = response.favorites; // Lista de favoritos retornada pelo backend
+
+                // Marca visualmente os itens favoritados
+                favorites.forEach(courseId => {
+                    $(`[data-id="${courseId}"]`).addClass('favorite'); // Adiciona a classe .favorite aos itens já favoritados
+                    $(`[data-id="${courseId}"] .favorite-button`).text('⭐'); // Atualiza o texto do botão
+                });
+
+                // Atualiza o filtro de favoritos
+                $('#Container').mixItUp(); // Se você estiver usando MixItUp para filtragem
+            } else {
+                console.error('Erro ao carregar favoritos:', response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Erro na requisição:', error);
+        }
+    });
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Entrar</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+<link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white); 
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      .overlay {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+    </style>
+
+    
+    <!-- Custom styles for this template --> 
+    <link href="/sign-in.css" rel="stylesheet">
+  </head>
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+      
+<main class="form-signin w-100 m-auto">
+  <form id="loginForm">
+    <img class="mb-3" src="/TECNOBA__1_-removebg-preview.png" alt="" width="280" height="120">
+    <h1 class="h4 mb-3 fw-normal">Login</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="senha" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Senha</label>
+    </div>
+    <button class="btn btn-primary w-100 py-2" type="submit">Entrar</button>
+    <div class="mt-1">
+      <a href="#" class="text-body-secondary" id="forgotPasswordLink">Esqueceu a senha?</a>
+    </div>
+    <br><br>
+    <a href="/indexCadastro.html" class="mt-5 mb-2 text-body-secondary">Ainda não tem uma uma conta? Cadastre-se!</a>
+    
+  </form>
+</main>
+<!-- Overlay de recuperação de senha -->
+<div id="forgotPasswordOverlay" class="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" id="closeOverlay">&times;</span>
+    <h2>Recuperar senha</h2>
+    <p>Digite seu e-mail para redefinir sua senha:</p>
+    <form id="sendResetEmailForm">
+      <input type="email" class="form-control mb-2" id="resetEmail" placeholder="name@example.com" required>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<!-- Overlay de redefinição de senha -->
+<div id="resetPasswordOverlay" class="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" id="closeResetOverlay">&times;</span>
+    <h2>Redefinir Senha</h2>
+    <form id="resetPasswordForm">
+      <input type="hidden" id="resetEmailForReset">
+      <input type="password" id="novaSenha" placeholder="Digite sua nova senha" required>
+      <button type="submit">Redefinir Senha</button>
+    </form>
+  </div>
+</div>
+<!-- Overlay de confirmação do token -->
+<div id="confirmTokenOverlay" class="overlay">
+  <div class="overlay-content">
+    <span class="close-btn" id="closeTokenOverlay">&times;</span>
+    <h2>Confirmação do Token</h2>
+    <p>Digite o token recebido por e-mail para confirmar a redefinição:</p>
+    <form id="confirmTokenForm">
+      <input type="text" class="form-control mb-2" id="tokenInput" placeholder="Token" required>
+      <button type="submit" class="btn btn-primary w-100">Confirmar Token</button>
+    </form>
+  </div>
+</div>
+<script>
+  let emailRecuperacao; // Variável global para armazenar o e-mail
+  // Função para login
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+
+
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Login bem-sucedido, redirecionar para a página de destino
+                        window.location.href = '/pagaluno';
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+        });
+
+         // Abrir o overlay de recuperação de senha
+      document.getElementById('forgotPasswordLink').addEventListener('click', function(event) {
+        event.preventDefault();
+        document.getElementById('forgotPasswordOverlay').style.display = 'block';
+      });
+
+      // Fechar o overlay de recuperação de senha
+      document.getElementById('closeOverlay').addEventListener('click', function() {
+        document.getElementById('forgotPasswordOverlay').style.display = 'none';
+      });
+
+      // Fechar o overlay de recuperação de senha ao clicar fora do conteúdo
+      window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('forgotPasswordOverlay')) {
+          document.getElementById('forgotPasswordOverlay').style.display = 'none';
+        }
+      });
+
+      // Submissão do formulário de recuperação de senha
+document.getElementById('sendResetEmailForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const email = document.getElementById('resetEmail').value;
+
+  fetch('/send-password-reset', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email })
+  })
+  .then(response => {
+    if (response.ok) {
+      alert('Instruções de redefinição de senha foram enviadas para ' + email);
+      document.getElementById('forgotPasswordOverlay').style.display = 'none';
+      emailRecuperacao = email; // Armazenando o e-mail para uso posterior
+      showConfirmTokenOverlay(); // Abrir o overlay de confirmação do token
+    } else {
+      alert('Erro ao enviar o e-mail de recuperação. Tente novamente mais tarde.');
+    }
+  })
+  .catch(error => {
+    console.error('Erro:', error);
+    alert('Ocorreu um erro. Por favor, tente novamente.');
+  });
+});
+
+      // Exibir o overlay de confirmação do token
+      function showConfirmTokenOverlay() {
+        document.getElementById('confirmTokenOverlay').style.display = 'block';
+      }
+
+      // Submissão do formulário de confirmação do token
+document.getElementById('confirmTokenForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const token = document.getElementById('tokenInput').value;
+
+  fetch('/verify-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ token: token, email: emailRecuperacao }) // Usar o e-mail armazenado
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      console.log('Token verificado com sucesso');
+      document.getElementById('confirmTokenOverlay').style.display = 'none';
+      showResetPasswordOverlay();
+    } else {
+      console.error('Erro:', data.error);
+      alert(data.error);
+    }
+  })
+  .catch(error => {
+    console.error('Erro:', error);
+    alert('Ocorreu um erro. Por favor, tente novamente.');
+  });
+});
+      // Fechar o overlay de confirmação do token
+      document.getElementById('closeTokenOverlay').addEventListener('click', function() {
+        document.getElementById('confirmTokenOverlay').style.display = 'none';
+      });
+
+      // Fechar o overlay de confirmação do token ao clicar fora do conteúdo
+      window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('confirmTokenOverlay')) {
+          document.getElementById('confirmTokenOverlay').style.display = 'none';
+        }
+      });
+
+      // Exibir o overlay de redefinição de senha
+      function showResetPasswordOverlay(email) {
+        document.getElementById('resetEmail').value = email;
+        document.getElementById('resetPasswordOverlay').style.display = 'block';
+      }
+
+      // Enviar nova senha
+document.getElementById('resetPasswordForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const novaSenha = document.getElementById('novaSenha').value;
+
+  // Usar o e-mail armazenado
+  fetch('/reset-password', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: emailRecuperacao, novaSenha: novaSenha }) // Enviar o e-mail e a nova senha
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Resposta do servidor:', data);
+    alert(data.message);
+    if (data.success) {
+      document.getElementById('resetPasswordOverlay').style.display = 'none';
+    }
+  })
+  .catch(error => {
+    console.error('Erro na redefinição de senha:', error);
+  });
+});
+
+      // Fechar o overlay de redefinição de senha
+      document.getElementById('closeResetOverlay').addEventListener('click', function() {
+        document.getElementById('resetPasswordOverlay').style.display = 'none';
+      });
+
+      // Fechar o overlay de redefinição de senha ao clicar fora do conteúdo
+      window.addEventListener('click', function(event) {
+        if (event.target === document.getElementById('resetPasswordOverlay')) {
+          document.getElementById('resetPasswordOverlay').style.display = 'none';
+        }
+      });
+</script>
+
+    </body>
+</html>
